@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  '**/*.{ts,tsx}': () => 'pnpm tsc --noEmit',
+  '**/*.{ts,tsx}': () => 'pnpm typecheck',
   '**/*.{js,jsx,ts,tsx}': [
     filenames =>
       `pnpm lint:fix --file ${filenames
