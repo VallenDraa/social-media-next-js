@@ -1,9 +1,9 @@
-name: Jest Tests
+name: Vitest Tests
 
 on: [push, pull_request]
 
 jobs:
-  jest:
+  vitest:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,4 +21,4 @@ jobs:
         run: pnpm install
 
       - name: Run unit and integration tests
-        run: pnpm test:ci
+        run: pnpm test
