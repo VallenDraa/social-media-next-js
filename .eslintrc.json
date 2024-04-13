@@ -1,7 +1,5 @@
 {
-  "env": {
-    "jest": true
-  },
+  "env": {},
   "extends": [
     "xo",
     "xo-typescript",
