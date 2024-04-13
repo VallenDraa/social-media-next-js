@@ -2,6 +2,7 @@ import { type Metadata } from 'next';
 import { Space_Mono } from 'next/font/google';
 import React from 'react';
 import './globals.css';
+import { StoreProvider } from './_commons/providers';
 
 const monospace = Space_Mono({ weight: ['400', '700'], subsets: ['latin'] });
 
@@ -17,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={monospace.className}>{children}</body>
+      <body className={monospace.className}>
+        <StoreProvider>{children}</StoreProvider>
+      </body>
     </html>
   );
 }
