@@ -2,7 +2,7 @@ import { type Metadata } from 'next';
 import { Space_Mono } from 'next/font/google';
 import React from 'react';
 import './globals.css';
-import { StoreProvider } from './_commons/providers';
+import { StoreProvider } from '@/providers';
 
 const monospace = Space_Mono({ weight: ['400', '700'], subsets: ['latin'] });
 
