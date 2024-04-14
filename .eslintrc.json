@@ -43,6 +43,8 @@
         "format": ["camelCase", "PascalCase"]
       }
     ],
+    "@typescript-eslint/ban-types": ["error", { "types": { "null": false } }],
+    "eslint-plugin-unicorn/no-null": "off",
     "react/display-name": "warn",
     "new-cap": "off"
   }

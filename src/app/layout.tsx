@@ -1,7 +1,8 @@
+import './globals.css';
+import React from 'react';
+
 import { type Metadata } from 'next';
 import { Space_Mono } from 'next/font/google';
-import React from 'react';
-import './globals.css';
 import { StoreProvider } from '@/providers';
 
 const monospace = Space_Mono({ weight: ['400', '700'], subsets: ['latin'] });
@@ -13,9 +14,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang='en'>
       <body className={monospace.className}>

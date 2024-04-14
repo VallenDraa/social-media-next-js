@@ -6,13 +6,11 @@ export const registerValidator = z.object({
   password: z.string().min(8),
   confirmPassword: z.string().min(8),
 });
-export type Register = z.infer<typeof registerValidator>;
 
 export const loginValidator = z.object({
   email: z.string().email(),
   password: z.string().min(8),
 });
-export type Login = z.infer<typeof loginValidator>;
 
 export const userValidator = z.object({
   id: z.string(),
@@ -22,4 +20,3 @@ export const userValidator = z.object({
   createdAt: z.string(),
   updatedAt: z.string(),
 });
-export type User = z.infer<typeof userValidator>;
