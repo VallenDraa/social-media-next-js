@@ -11,6 +11,9 @@ const config = {
   ],
   prefix: '',
   theme: {
+    supports: {
+      dvh: 'max-height: 100dvh',
+    },
     container: {
       center: true,
       padding: '2rem',
