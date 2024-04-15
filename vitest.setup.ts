@@ -1,12 +1,18 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { afterEach } from 'vitest';
 import { cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/vitest';
 import { server } from '@/__tests__/msw';
 
-// Runs a clean after each test case (e.g. clearing jsdom)
-
 beforeAll(() => {
   server.listen();
+
+  vi.mock('next/font/google', () => ({
+    Space_Mono: () => ({
+      style: { fontFamily: 'mocked' },
+      className: 'mocked',
+    }),
+  }));
 });
 
 afterEach(() => {
