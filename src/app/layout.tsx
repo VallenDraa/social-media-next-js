@@ -2,10 +2,9 @@ import './globals.css';
 import React from 'react';
 
 import { type Metadata } from 'next';
-import { Space_Mono } from 'next/font/google';
-import { StoreProvider } from '@/providers';
-
-const monospace = Space_Mono({ weight: ['400', '700'], subsets: ['latin'] });
+import { Provider } from '@/providers';
+import { monospace } from '@/lib/font';
+import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,9 +15,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang='en'>
-      <body className={monospace.className}>
-        <StoreProvider>{children}</StoreProvider>
+    <html className='dark' lang='en'>
+      <body
+        className={cn('bg-slate-50 dark:bg-slate-900', monospace.className)}
+      >
+        <Provider>{children}</Provider>
       </body>
     </html>
   );

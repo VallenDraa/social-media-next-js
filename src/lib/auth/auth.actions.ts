@@ -7,35 +7,33 @@ import { type ApiResponse, api } from '@/lib/api';
 import { unstable_noStore as noStore } from 'next/cache';
 import { env } from '../env';
 import { type User, type Login, type Register } from './auth.types';
+import { parseAxiosError } from '../error';
 
-export const register = async (formData: FormData) => {
+export const register = async (registerData: Register) => {
   noStore();
 
-  const invalidatedRegisterData: Register = {
-    email: formData.get('email') as string,
-    username: formData.get('username') as string,
-    password: formData.get('password') as string,
-    confirmPassword: formData.get('confirm-password') as string,
-  };
+  const validatedData = await registerValidator.parseAsync(registerData);
 
-  const body = registerValidator.parse(invalidatedRegisterData);
+  try {
+    const { data } = await api.post<ApiResponse<null>>(
+      '/auth/register',
+      validatedData,
+    );
 
-  return api.post('/auth/register', body);
+    return data;
+  } catch (error) {
+    return parseAxiosError(error);
+  }
 };
 
-export const login = async (formData: FormData) => {
+export const login = async (loginData: Login) => {
   noStore();
 
-  const invalidatedLoginData: Login = {
-    email: formData.get('email') as string,
-    password: formData.get('password') as string,
-  };
-
-  const body = loginValidator.parse(invalidatedLoginData);
+  const validatedData = await loginValidator.parseAsync(loginData);
 
   const { data, headers } = await api.post<
     ApiResponse<{ accessToken: string; refreshToken: string }>
-  >('/auth/login', body);
+  >('/auth/login', validatedData);
 
   const cookiesStore = cookies();
   const refreshToken = cookie.parse(headers['set-cookie']![0]);

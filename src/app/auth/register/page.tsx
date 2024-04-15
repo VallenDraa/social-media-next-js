@@ -1,27 +1,37 @@
-import { Button } from '@/components/ui/button';
-import { register } from '@/lib/auth';
-import { redirect } from 'next/navigation';
+import { buttonVariants } from '@/components/ui';
+import { RegisterForm } from '../_components';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui';
+import Link from 'next/link';
+
+export const dynamic = 'force-static';
 
 export default function RegisterPage() {
   return (
-    <form
-      action={async formData => {
-        'use server';
-
-        await register(formData);
-        redirect('/auth/login');
-      }}
-    >
-      <input type='text' name='username' placeholder='username' />
-      <input type='text' name='email' placeholder='email' />
-      <input type='text' name='password' placeholder='password' />
-      <input
-        type='text'
-        name='confirm-password'
-        placeholder='confirm-password'
-      />
-
-      <Button>Register</Button>
-    </form>
+    <Card>
+      <CardHeader>
+        <CardTitle>register to socmed.</CardTitle>
+        <CardDescription>
+          connect, share, and explore - join our community today!
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <RegisterForm />
+      </CardContent>
+      <CardFooter className='justify-center'>
+        <Link
+          href='/auth/login'
+          className={buttonVariants({ variant: 'link', size: 'sm' })}
+        >
+          login here instead
+        </Link>
+      </CardFooter>
+    </Card>
   );
 }
