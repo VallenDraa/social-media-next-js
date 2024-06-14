@@ -9,9 +9,10 @@ import { toast } from 'sonner';
 import { getErrorMessage } from '@/shared/utils/error-parser';
 import { register } from '../actions/register.action';
 import { Form } from '@/shared/components/ui/form';
-import { Button } from '@/shared/components/ui/button';
+import { Button, buttonVariants } from '@/shared/components/ui/button';
 import { FormFieldItem } from '@/shared/components/ui/form-field-item';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export function RegisterForm() {
   const router = useRouter();
@@ -65,7 +66,19 @@ export function RegisterForm() {
           placeholder='superSecretPassword123'
           label='Confirm Password'
         />
-        <Button type='submit'>Submit</Button>
+
+        <div className='flex flex-col justify-center'>
+          <Button className='w-full' type='submit'>
+            Submit
+          </Button>
+
+          <Link
+            href='/auth/login'
+            className={buttonVariants({ variant: 'link' })}
+          >
+            Login instead? Click here
+          </Link>
+        </div>
       </form>
     </Form>
   );
