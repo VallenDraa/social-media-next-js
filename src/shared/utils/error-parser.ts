@@ -35,5 +35,5 @@ export function isErrorApiResponse(
     return false;
   }
 
-  return 'errors' in response;
+  return 'error' in response;
 }
