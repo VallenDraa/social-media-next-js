@@ -14,9 +14,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang='en'>
-      <body className='flex min-h-screen flex-col'>
+      <body className='dark flex min-h-screen flex-col font-mono'>
         {children}
-        <Toaster />
+        <Toaster richColors position='bottom-center' closeButton />
       </body>
     </html>
   );
