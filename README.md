@@ -6,11 +6,11 @@ Learning how to structure a next.js 14 app properly.
 
 ## Todo
 
-Reminder to me: before coding a feature _PLEASE WRITE UNIT TESTS!_ and to code the features in a _UNIDIRECTIONAL MANNER!_
+Reminder to me: before coding a feature _PLEASE WRITE TESTS WHEN NEEDED!_ and to code the features in a _UNIDIRECTIONAL MANNER!_
 
 1. Auth
-   a. Register []
-   b. Login []
+   a. Register [x]
+   b. Login [x]
 2. Users
    a. Logged in user profile []
    b. User change password []
