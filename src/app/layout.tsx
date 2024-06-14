@@ -2,9 +2,6 @@ import './globals.css';
 import React from 'react';
 
 import { type Metadata } from 'next';
-import { Provider } from '@/providers';
-import { monospace } from '@/lib/font';
-import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,11 +13,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html className='dark' lang='en'>
-      <body
-        className={cn('bg-slate-50 dark:bg-slate-900', monospace.className)}
-      >
-        <Provider>{children}</Provider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
