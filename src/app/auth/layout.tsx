@@ -6,7 +6,7 @@ export type AuthLayoutProps = Readonly<{
 
 export default function AuthLayout(props: AuthLayoutProps) {
   return (
-    <section className='mx-auto flex min-h-screen w-full max-w-xl flex-col justify-center px-4'>
+    <section className='flex min-h-screen flex-col justify-center'>
       {props.children}
     </section>
   );

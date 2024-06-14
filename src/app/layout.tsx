@@ -14,8 +14,8 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang='en'>
-      <body className='dark flex min-h-screen flex-col font-mono'>
-        {children}
+      <body className='dark font-mono'>
+        <div className='mx-auto w-full max-w-xl px-4'>{children}</div>
         <Toaster richColors position='bottom-center' closeButton />
       </body>
     </html>
