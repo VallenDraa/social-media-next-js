@@ -1,6 +1,6 @@
 import { isAxiosError } from 'axios';
 import z from 'zod';
-import { type ApiErrorResponse } from '@/shared/types/api.types';
+import { type ApiErrorResponse } from '@/features/shared/types/api.types';
 
 export const DEFAULT_ERROR_MESSAGE =
   'An error happened. Please try again later!';

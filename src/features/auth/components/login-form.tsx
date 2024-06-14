@@ -5,14 +5,14 @@ import Link from 'next/link';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
-import { getErrorMessage } from '@/shared/utils/error-parser';
-import { Form } from '@/shared/components/ui/form';
-import { Button, buttonVariants } from '@/shared/components/ui/button';
-import { FormFieldItem } from '@/shared/components/ui/form-field-item';
+import { getErrorMessage } from '@/features/shared/utils/error-parser';
+import { Form } from '@/features/shared/components/ui/form';
+import { Button, buttonVariants } from '@/features/shared/components/ui/button';
+import { FormFieldItem } from '@/features/shared/components/ui/form-field-item';
 import { useRouter } from 'next/navigation';
-import { type Login } from '../types/login.types';
-import { loginValidator } from '../validators/login.validator';
-import { login } from '../actions/login.action';
+import { type Login } from '@/features/auth/types/login.types';
+import { loginValidator } from '@/features/auth/validators/login.validator';
+import { login } from '@/features/auth/actions/login.action';
 
 export function LoginForm() {
   const router = useRouter();

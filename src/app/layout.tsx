@@ -2,7 +2,7 @@ import './globals.css';
 import React from 'react';
 
 import { type Metadata } from 'next';
-import { Toaster } from '@/shared/components/ui/sonner';
+import { Toaster } from '@/features/shared/components/ui/sonner';
 
 export const metadata: Metadata = {
   title: 'Create Next App',

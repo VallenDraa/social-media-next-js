@@ -1,4 +1,4 @@
-import { cn } from '@/shared/utils/shadcn';
+import { cn } from '@/features/shared/utils/shadcn';
 import React from 'react';
 
 export type TextType =

@@ -1,11 +1,11 @@
 'use server';
 
-import { api } from '@/shared/lib/api-client';
-import { getErrorMessage } from '@/shared/utils/error-parser';
-import { type ApiSuccessResponse } from '@/shared/types/api.types';
-import { type Login } from '../types/login.types';
-import { loginValidator } from '../validators/login.validator';
-import { setCookie } from '@/shared/utils/set-cookie';
+import { api } from '@/features/shared/lib/api-client';
+import { getErrorMessage } from '@/features/shared/utils/error-parser';
+import { type ApiSuccessResponse } from '@/features/shared/types/api.types';
+import { type Login } from '@/features/auth/types/login.types';
+import { loginValidator } from '@/features/auth/validators/login.validator';
+import { setCookie } from '@/features/shared/utils/set-cookie';
 import { cookies } from 'next/headers';
 
 export async function login(data: Login) {

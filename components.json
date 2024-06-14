@@ -11,7 +11,7 @@
     "prefix": ""
   },
   "aliases": {
-    "components": "@/shared/components",
-    "utils": "@/shared/utils/shadcn"
+    "components": "@/features/shared/components",
+    "utils": "@/features/shared/utils/shadcn"
   }
 }

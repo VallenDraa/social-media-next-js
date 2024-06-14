@@ -1,16 +1,16 @@
 'use client';
 
 import React from 'react';
-import { type Register } from '../types/register.types';
+import { type Register } from '@/features/auth/types/register.types';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { registerValidator } from '../validators/register.validator';
+import { registerValidator } from '@/features/auth/validators/register.validator';
 import { toast } from 'sonner';
-import { getErrorMessage } from '@/shared/utils/error-parser';
-import { register } from '../actions/register.action';
-import { Form } from '@/shared/components/ui/form';
-import { Button, buttonVariants } from '@/shared/components/ui/button';
-import { FormFieldItem } from '@/shared/components/ui/form-field-item';
+import { getErrorMessage } from '@/features/shared/utils/error-parser';
+import { register } from '@/features/auth/actions/register.action';
+import { Form } from '@/features/shared/components/ui/form';
+import { Button, buttonVariants } from '@/features/shared/components/ui/button';
+import { FormFieldItem } from '@/features/shared/components/ui/form-field-item';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
