@@ -29,8 +29,8 @@ export function RegisterForm() {
 
   const handleSubmit = async (data: Register) => {
     try {
-      await register(data);
-      toast.success('Registration successful!');
+      const response = await register(data);
+      toast.success(response.message);
       router.push('/auth/login');
     } catch (error) {
       toast.error(getErrorMessage(error));
