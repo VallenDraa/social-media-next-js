@@ -1,6 +1,6 @@
 import React from 'react';
 import { RegisterForm } from '@/features/auth/components/register-form';
-import Text from '@/features/shared/components/ui/text';
+import { Text } from '@/features/shared/components/ui/text';
 
 export default function RegisterPage() {
   return (

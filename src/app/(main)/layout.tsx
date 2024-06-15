@@ -3,7 +3,7 @@ import { ReactQueryLoader } from '@/features/shared/lib/react-query-loader';
 import { CurrentUserProfileDropdown } from '@/features/users/components/current-user-profile-dropdown';
 import { prefetchCurrentUser } from '@/features/users/query/get-current-user.query';
 import { ThemeChooser } from '@/features/shared/components/ui/theme-chooser';
-import Text from '@/features/shared/components/ui/text';
+import { Text } from '@/features/shared/components/ui/text';
 
 export default function MainLayout({
   children,
@@ -17,7 +17,6 @@ export default function MainLayout({
 
         <div className='flex items-center justify-end gap-4'>
           <ThemeChooser />
-
           <CurrentUserProfileDropdown />
         </div>
       </header>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Text from '@/features/shared/components/ui/text';
+import { Text } from '@/features/shared/components/ui/text';
 import { LoginForm } from '@/features/auth/components/login-form';
 
 export default function LoginPage() {
