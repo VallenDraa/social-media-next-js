@@ -3,9 +3,17 @@ import {
   refreshTokenMiddleware,
   shouldRefreshCookie,
 } from './middlewares/refresh-token.middleware';
+import {
+  removeAuthMiddleware,
+  shouldRemoveAuth,
+} from './middlewares/remove-auth.middleware';
 
 // This function can be marked `async` if using `await` inside
 export async function middleware(request: NextRequest) {
+  if (shouldRemoveAuth(request)) {
+    return removeAuthMiddleware(request);
+  }
+
   if (shouldRefreshCookie()) {
     return refreshTokenMiddleware(request);
   }
