@@ -15,7 +15,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className='dark font-mono'>
+      <body className='font-mono'>
         <AppProviders>
           <div className='mx-auto w-full max-w-xl px-4'>{children}</div>
           <Toaster richColors position='bottom-center' closeButton />

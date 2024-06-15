@@ -29,7 +29,12 @@ export function AppProviders(props: AppProvidersProps) {
   return (
     <QueryClientProvider client={queryClient}>
       {env.NEXT_PUBLIC_APP_ENV === 'development' && <ReactQueryDevtools />}
-      <ThemeProvider enableSystem defaultTheme='system' themes={themes}>
+      <ThemeProvider
+        attribute='class'
+        enableSystem
+        defaultTheme='system'
+        themes={themes}
+      >
         {props.children}
       </ThemeProvider>
     </QueryClientProvider>
