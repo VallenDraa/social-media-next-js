@@ -17,7 +17,9 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body className='font-mono'>
         <AppProviders>
-          <div className='mx-auto w-full max-w-xl px-4'>{children}</div>
+          <div className='mx-auto flex min-h-screen w-full max-w-xl flex-col px-4'>
+            {children}
+          </div>
           <Toaster richColors position='bottom-center' closeButton />
         </AppProviders>
       </body>
