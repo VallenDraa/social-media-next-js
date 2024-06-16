@@ -38,7 +38,7 @@ export function CurrentUserProfileDropdown() {
         {/* Dialog trigger for user profile detail */}
         <DropdownMenuItem asChild className='gap-1'>
           {!isLoading && currentUser ? (
-            <Link href={'/profile'}>
+            <Link href={`/@${currentUser.username}`}>
               <PersonIcon />
               <span>Profile</span>
             </Link>

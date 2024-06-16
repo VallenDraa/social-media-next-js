@@ -4,6 +4,7 @@ import { CurrentUserProfileDropdown } from '@/features/users/components/current-
 import { prefetchCurrentUser } from '@/features/users/query/get-current-user.query';
 import { ThemeChooser } from '@/features/shared/components/ui/theme-chooser';
 import { Text } from '@/features/shared/components/ui/text';
+import { Navbar } from '@/features/shared/components/ui/navbar';
 
 export default function MainLayout({
   children,
@@ -21,9 +22,8 @@ export default function MainLayout({
         </div>
       </header>
       <main className='grow'>{children}</main>
-      <footer className='flex  justify-between py-2 text-[0.65rem] text-neutral-500'>
-        <Text display='sm'>Made By VallenDra With 💖</Text>
-        <Text display='sm'>{new Date().getFullYear()}</Text>
+      <footer>
+        <Navbar />
       </footer>
     </ReactQueryLoader>
   );
