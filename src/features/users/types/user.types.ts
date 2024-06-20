@@ -6,3 +6,10 @@ export type User = {
   createdAt: string;
   updatedAt: string;
 };
+
+export type UserProfile = {
+  id: string;
+  username: string;
+  profilePicture: string;
+  createdAt: string;
+};

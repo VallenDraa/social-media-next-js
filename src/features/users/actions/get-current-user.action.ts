@@ -1,13 +1,11 @@
 'use server';
 
-import {
-  type ApiErrorResponse,
-  type ApiSuccessResponse,
-} from '@/features/shared/types/api.types';
+import { type ApiSuccessResponse } from '@/features/shared/types/api.types';
 import { type User } from '@/features/users/types/user.types';
 import { apiWithAuth } from '@/features/shared/lib/api-client';
-import { isAxiosError } from 'axios';
 import { cookies } from 'next/headers';
+import { userProfileDto } from '../dto/user-profile.dto';
+import { makeServerActionError } from '@/features/shared/utils/error-parser';
 
 export async function getCurrentUser() {
   try {
@@ -16,12 +14,9 @@ export async function getCurrentUser() {
         '/auth/me',
       );
 
-    return response.data.data.user;
+    return userProfileDto(response.data.data.user);
   } catch (error) {
-    if (isAxiosError<ApiErrorResponse>(error)) {
-      return error.response!.data;
-    }
-
-    throw error;
+    const errObj = makeServerActionError(error);
+    throw errObj;
   }
 }
