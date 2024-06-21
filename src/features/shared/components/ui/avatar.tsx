@@ -4,6 +4,16 @@ import * as React from 'react';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 
 import { cn } from '@/features/shared/utils/shadcn';
+import { Skeleton } from './skeleton';
+
+function AvatarSkeleton({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <Skeleton className={cn('h-10 w-10 rounded-full', className)} {...props} />
+  );
+}
 
 const Avatar = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Root>,
@@ -47,4 +57,4 @@ const AvatarFallback = React.forwardRef<
 ));
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
 
-export { Avatar, AvatarImage, AvatarFallback };
+export { AvatarSkeleton, Avatar, AvatarImage, AvatarFallback };

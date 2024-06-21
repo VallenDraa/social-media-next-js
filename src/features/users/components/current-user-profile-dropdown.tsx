@@ -9,10 +9,16 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/features/shared/components/ui/dropdown-menu';
-import { AvatarWithSkeleton } from '@/features/shared/components/ui/avatar-with-skeleton';
 import Link from 'next/link';
 import { ExitIcon, PersonIcon } from '@radix-ui/react-icons';
 import { Skeleton } from '@/features/shared/components/ui/skeleton';
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+  AvatarSkeleton,
+} from '@/features/shared/components/ui/avatar';
+import { getInitials } from '../utils';
 
 export function CurrentUserProfileDropdown() {
   const { data: currentUser, isLoading } = useGetCurrentUser();
@@ -24,12 +30,17 @@ export function CurrentUserProfileDropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className='rounded-full'>
-        <AvatarWithSkeleton
-          isLoading={isLoading || !currentUser}
-          src={currentUser?.profilePicture ?? ''}
-          alt={currentUser?.username ?? ''}
-          fallback={currentUser?.username.slice(0, 2) ?? ''}
-        />
+        {isLoading || !currentUser ? (
+          <AvatarSkeleton />
+        ) : (
+          <Avatar>
+            <AvatarImage
+              src={currentUser.profilePicture}
+              alt={currentUser.username}
+            />
+            <AvatarFallback>{getInitials(currentUser.username)}</AvatarFallback>
+          </Avatar>
+        )}
 
         <span className='sr-only'>Open Profile Dropdown</span>
       </DropdownMenuTrigger>

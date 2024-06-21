@@ -4,7 +4,7 @@ import { getSingleUserByUsername } from '../actions/get-single-user.action';
 import { type QueryConfig } from '@/features/shared/lib/react-query';
 import { type UserProfile } from '../types/user.types';
 
-export const SINGLE_USER_QUERY_KEY = 'current-user';
+export const SINGLE_USER_QUERY_KEY = 'user';
 
 export function getSingleUserByUsernameOptions(username: string) {
   return queryOptions({
