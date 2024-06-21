@@ -10,3 +10,13 @@ export type ApiErrorResponse = BaseApiResponse & {
 export type ApiSuccessResponse<T> = BaseApiResponse & {
   data: T;
 };
+
+export type PaginatedApiResponse<T> = {
+  data: T;
+  metadata: {
+    currentPage: number;
+    lastPage: number;
+    limit: number;
+    total: number;
+  };
+};
